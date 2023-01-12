@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script defer src="https://code.responsivevoice.org/responsivevoice.js?key=zSIijEye"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+  <script defer src="./script.js"></script>
+  <style>
+    .active-card {
+      position: relative;
+      z-index: 10;
+      order: -1;
+      width: 100%;
+      height: auto;
+    }
+    .not-active-card .control {
+      display: none;
+    }
+    .not-active-card .card-header {
+      visibility: hidden;
+      position: absolute;
+      z-index: -100;
+    }
+    .not-active-card .card-body { 
+      display: -webkit-box;
+      -webkit-line-clamp: 9;
+      -webkit-box-orient: vertical;
+      width: 18rem;
+      height: 238px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+    }
+    .card-text::selection {
+      background: #fff;
+      color: #ff0000;
+    }
+  </style>
+  <title>Speaker</title>
+</head>
+<body>
+  <header class="mb-5">
+    <nav class="navbar bg-body-secondary">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 fs-2 fw-bold text-warning-emphasis">Text reader</span>
+        <button class="btn btn-warning text-secondary-emphasis fs-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Add text</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="texts-section container">
+      <select id="lg" class="form-select w-25 ms-auto"></select>
+      <h2 class="fs-3 text-center my-2 mb-4">Your texts</h2>
+      <div id="grid" class="d-flex flex-wrap gap-3"></div>
+    </section>
+  </main>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Input your text</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <form id="addTextForm" class="container">
+        <textarea class="form-control mb-3"></textarea>
+        <button type="submit" class="btn btn-secondary">Add text</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
